@@ -1,4 +1,5 @@
-str = input()
+from textblob import TextBlob
+str1 = input()
 def realcount(a, s):
     n = 0
     for i in range(len(s)):
@@ -6,4 +7,5 @@ def realcount(a, s):
     return(n)
 pass
 s = ['а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я', 'a', 'e', 'i', 'o', 'u', 'y']
-print(realcount(str, s))
+print(realcount(str1, s))
+
