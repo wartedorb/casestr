@@ -6,7 +6,7 @@ Case-study #3 Анализ текста
 from textblob import TextBlob, en
 
 text = input("Введите текст:")
-count_sentens = text.count('.')
+count_sentens = text.count('.') + text.count('!') + text.count('?')
 count_words = text.count(" ") + 1
 t = text.lower()
 count_syllables = t.count('а') + t.count('о') + t.count('э') + t.count('ю') + t.count('я') + t.count('и') + t.count('ё') + t.count('у') + t.count('е') + t.count('ы') + t.count('a') + t.count('o')  + t.count('u') +  + t.count('e')  + t.count('i') + t.count('y')
