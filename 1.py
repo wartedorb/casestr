@@ -1,8 +1,10 @@
-"""Case-study #3 Анализ текста
+"""
+Case-study #3 Анализ текста
 Разработчики:
 Бикметов Э.Б., Бычков К.А., Кондрашов М.С.
-
 """
+from textblob import TextBlob
+
 
 text = input("Введите текст:")
 count_sentens = text.count('.')
@@ -33,3 +35,16 @@ elif 25 < FRE <= 50:
     print('Текст немного трудно читать (для студентов).')
 else:
     print('Текст трудно читается (для выпускников ВУЗов).')
+
+Pol = TextBlob(text).polarity
+ob = str((1 - TextBlob(text).subjectivity) * 100)
+if  Pol > 0.3 :
+    print('Тональность текста: положительная')
+elif -0.3 < Pol < 0.3:
+    print('Тональность текста: нейтральная')
+elif Pol < 0.3:
+    print('Тональность текста: негативная')
+print('Объективность:',ob+'%')
+
+
+
