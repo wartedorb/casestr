@@ -3,8 +3,7 @@ Case-study #3 Анализ текста
 Разработчики:
 Бикметов Э.Б., Бычков К.А., Кондрашов М.С.
 """
-from textblob import TextBlob
-
+from textblob import TextBlob, en
 
 text = input("Введите текст:")
 count_sentens = text.count('.')
@@ -21,10 +20,16 @@ print ('Средняя длина слова в слогах:',ASW)
    #FRE = 206.835 − (1.3 × ASL) − (60.1 × ASW)
 if  ord(t[0]) < 123:
     FRE = 206.835 - 1.015 * ASL - 84.6 * ASW
+    text1 = TextBlob(text)
 #eng
 else:
     FRE = 206.835 - (1.3 * ASL) - (60.1 * ASW)
+    text1 = TextBlob(text)
+    text1= text1.translate()
+    print(text1)
 #rus
+
+
 print ('Индекс удобочитаемости Флеша:',FRE)
 import textblob
 if FRE > 80:
@@ -36,15 +41,16 @@ elif 25 < FRE <= 50:
 else:
     print('Текст трудно читается (для выпускников ВУЗов).')
 
-Pol = TextBlob(text).polarity
-ob = str((1 - TextBlob(text).subjectivity) * 100)
+Pol = text1.polarity
+ob = (1 - text1.subjectivity) * 100
 if  Pol > 0.3 :
     print('Тональность текста: положительная')
 elif -0.3 < Pol < 0.3:
     print('Тональность текста: нейтральная')
 elif Pol < 0.3:
     print('Тональность текста: негативная')
-print('Объективность:',ob+'%')
+print('Объективность: ' , format(ob,'.1f'),'%' , sep='')
+
 
 
 
