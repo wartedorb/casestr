@@ -14,5 +14,13 @@ print ('Слов:',count_words)
 print ('Слогов:',count_syllables)
 ASL = (count_words/count_sentens)
 print ('Средняя длина предложения в словах:',ASL)
-#print ('Средняя длина слова в слогах:',ASW)
-#print ('Индекс удобочитаемости Флеша:',FRE)
+ASW = count_syllables / count_words
+print ('Средняя длина слова в слогах:',ASW)
+   #FRE = 206.835 − (1.3 × ASL) − (60.1 × ASW)
+if     t[0] < 123:
+    FRE = 206.835 - 1.015 * ASL - 84.6 * ASW
+#eng
+else:
+    FRE = 206.835 - (1.3 * ASL) - (60.1 * ASW)
+#rus
+print ('Индекс удобочитаемости Флеша:',FRE)
