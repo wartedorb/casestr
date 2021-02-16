@@ -1,12 +1,12 @@
 """
 Case-study #3 Анализ текста
 Разработчики:
-Бикметов Э.Б., Бычков К.А., Кондрашов М.С.
+Бикметов Э.Б. = 40%, Бычков К.А. = 30%, Кондрашов М.С. = 30%
 """
 from textblob import TextBlob, en
 
 text = input("Введите текст:")
-count_sentens = text.count('.')
+count_sentens = text.count('.') + text.count('!') + text.count('?')
 count_words = text.count(" ") + 1
 t = text.lower()
 count_syllables = t.count('а') + t.count('о') + t.count('э') + t.count('ю') + t.count('я') + t.count('и') + t.count('ё') + t.count('у') + t.count('е') + t.count('ы') + t.count('a') + t.count('o')  + t.count('u') +  + t.count('e')  + t.count('i') + t.count('y')
@@ -40,6 +40,7 @@ elif 25 < FRE <= 50:
     print('Текст немного трудно читать (для студентов).')
 else:
     print('Текст трудно читается (для выпускников ВУЗов).')
+from textblob import *
 
 Pol = text1.polarity
 ob = (1 - text1.subjectivity) * 100
