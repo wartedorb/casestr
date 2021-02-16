@@ -25,11 +25,8 @@ else:
     FRE = 206.835 - (1.3 * ASL) - (60.1 * ASW)
     text1 = TextBlob(text)
     text1 = text1.translate()
-    print(text1)
 # rus
-
 print('Индекс удобочитаемости Флеша:', FRE)
-
 if FRE > 80:
     print('Текст очень легко читается (для младших школьников).')
 elif 50 < FRE <= 80:
